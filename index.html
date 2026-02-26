@@ -192,7 +192,7 @@
     <div class="hero">
         <h1>Seasoning Season 1</h1>
         <p>The ultimate snack showdown. You've tasted the disruption—now decide which flavor takes the crown in our global leaderboard.</p>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSda4n0_BxkUcd9U9Whuj1yK4uMx8scFvm76KtUP3kSR4AIGdw/viewform?usp=sharing&ouid=117378366788458075846" class="btn-vote">Cast Your Vote</a>
+        <a href="https://tally.so/r/jaBlKJ" class="btn-vote">Cast Your Vote</a>
     </div>
 
     <div class="row">
@@ -225,18 +225,8 @@
     <!-- Fix 2 & 3: Wrapped iframe in a responsive container with solid white background -->
     <div id="vote" class="vote-section">
         <h2 style="margin-bottom: 30px;">Choose Your Champion</h2>
-        <div class="form-container">
-            <div class="iframe-wrapper">
-                <iframe 
-                    src="https://docs.google.com/forms/d/e/1FAIpQLSda4n0_BxkUcd9U9Whuj1yK4uMx8scFvm76KtUP3kSR4AIGdw/viewform?embedded=true&usp=sf_link"
-                    frameborder="0" 
-                    marginheight="0" 
-                    marginwidth="0"
-                    scrolling="yes"
-                    title="Vote for your favorite flavor">
-                    Loading…
-                </iframe>
-            </div>
+        <iframe data-tally-src="https://tally.so/embed/jaBlKJ?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="569" frameborder="0" marginheight="0" marginwidth="0" title="Choose Your Champion"></iframe>
+        <script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
         </div>
     </div>
 
