@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PopDisrupt | Vote Your Flavor</title>
+    <style>
+        /* Base Styles & Netflix Palette */
+        :root {
+            --netflix-red: #E50914;
+            --netflix-black: #141414;
+            --netflix-grey: #808080;
+            --white: #FFFFFF;
+        }
+
+        body {
+            background-color: var(--netflix-black);
+            color: var(--white);
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        /* Navbar */
+        nav {
+            padding: 20px 50px;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.7) 10%, transparent);
+            position: fixed;
+            width: 100%;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+        }
+
+        .brand {
+            color: var(--netflix-red);
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-decoration: none;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 80vh;
+            background: linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.1)), 
+                        url('https://images.unsplash.com/photo-1572177191856-3cde618dee1f?q=80&w=2000') no-repeat center center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 50px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            max-width: 600px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 500px;
+            margin-bottom: 20px;
+        }
+
+        .btn-vote {
+            background-color: var(--netflix-red);
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 4px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            width: fit-content;
+        }
+
+        .btn-vote:hover {
+            background-color: #ff0a16;
+        }
+
+        /* Flavor Gallery */
+        .row {
+            padding: 40px 50px;
+        }
+
+        .row h2 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .flavor-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 10px;
+        }
+
+        .flavor-card {
+            transition: transform 0.3s ease;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .flavor-card:hover {
+            transform: scale(1.05);
+            z-index: 2;
+        }
+
+        .flavor-card img {
+            width: 100%;
+            border-radius: 4px;
+            aspect-ratio: 2/3;
+            object-fit: cover;
+        }
+
+        .flavor-label {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+        }
+
+        /* Form Section */
+        .vote-section {
+            background-color: #000;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .form-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        footer {
+            padding: 40px 50px;
+            color: var(--netflix-grey);
+            font-size: 0.8rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#" class="brand">PopDisrupt</a>
+    </nav>
+
+    <div class="hero">
+        <h1>Seasoning Season 1</h1>
+        <p>The ultimate snack showdown. You've tasted the disruption—now decide which flavor takes the crown in our global leaderboard.</p>
+        <a href="#vote" class="btn-vote">Cast Your Vote</a>
+    </div>
+
+    <div class="row">
+        <h2>Trending Flavors</h2>
+        <div class="flavor-grid">
+            <div class="flavor-card">
+                <img src="https://images.unsplash.com/photo-1585647347384-2593bcac5503?w=400" alt="Spicy Buffalo">
+                <div class="flavor-label">Spicy Buffalo</div>
+            </div>
+            <div class="flavor-card">
+                <img src="https://images.unsplash.com/photo-1621447508323-271228c798fb?w=400" alt="Truffle Parm">
+                <div class="flavor-label">Truffle Parm</div>
+            </div>
+            <div class="flavor-card">
+                <img src="https://images.unsplash.com/photo-1512149177596-f817c7ef5d4c?w=400" alt="Sweet Caramel">
+                <div class="flavor-label">Salted Caramel</div>
+            </div>
+            <div class="flavor-card">
+                <img src="https://images.unsplash.com/photo-1599490659223-915220ae0248?w=400" alt="Smoky BBQ">
+                <div class="flavor-label">Smoky BBQ</div>
+            </div>
+            <div class="flavor-card">
+                <img src="https://images.unsplash.com/photo-1630136452811-09493139886a?w=400" alt="White Cheddar">
+                <div class="flavor-label">White Cheddar</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="vote" class="vote-section">
+        <h2 style="margin-bottom: 30px;">Choose Your Champion</h2>
+        <div class="form-container">
+            <iframe 
+                src="https://docs.google.com/forms/d/e/1FAIpQLSfD_YOUR_FORM_ID_HERE/viewform?embedded=true" 
+                width="100%" 
+                height="800" 
+                frameborder="0" 
+                marginheight="0" 
+                marginwidth="0">Loading…</iframe>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 PopDisrupt Seasoning Co. Questions? Call 1-800-POP-CORN</p>
+    </footer>
+
+</body>
+</html>
