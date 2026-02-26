@@ -131,12 +131,48 @@
             text-align: center;
         }
 
+        /* Fix 2 & 3: Responsive iframe wrapper with solid white background */
         .form-container {
             max-width: 800px;
             margin: 0 auto;
-            background: #fff;
+            background: #ffffff;
             border-radius: 8px;
             overflow: hidden;
+            /* Responsive iframe trick */
+            position: relative;
+            width: 100%;
+        }
+
+        .iframe-wrapper {
+            position: relative;
+            width: 100%;
+            /* Aspect ratio approximating the Google Form height */
+            padding-bottom: 120%; /* tall enough for the form on mobile */
+        }
+
+        .iframe-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            background: #ffffff;
+            display: block;
+        }
+
+        /* On wider screens, use a fixed height instead of the padding trick */
+        @media (min-width: 600px) {
+            .iframe-wrapper {
+                padding-bottom: 0;
+                height: 750px;
+            }
+
+            .iframe-wrapper iframe {
+                position: static;
+                width: 100%;
+                height: 100%;
+            }
         }
 
         footer {
@@ -162,32 +198,46 @@
     <div class="row">
         <h2>Trending Flavors</h2>
         <div class="flavor-grid">
+            <!-- Fix 1: Replaced broken image links with working Unsplash URLs -->
             <div class="flavor-card">
-                <img src="https://images.unsplash.com/photo-1585647347384-2593bcac5503?w=400" alt="Spicy Buffalo">
+                <img src="https://images.unsplash.com/photo-1608039829572-78524f79c4c7?w=400&auto=format&fit=crop" alt="Spicy Buffalo">
                 <div class="flavor-label">Spicy Buffalo</div>
             </div>
             <div class="flavor-card">
-                <img src="https://images.unsplash.com/photo-1621447508323-271228c798fb?w=400" alt="Truffle Parm">
+                <img src="https://images.unsplash.com/photo-1551183053-bf91798d9f4f?w=400&auto=format&fit=crop" alt="Truffle Parm">
                 <div class="flavor-label">Truffle Parm</div>
             </div>
             <div class="flavor-card">
-                <img src="https://images.unsplash.com/photo-1512149177596-f817c7ef5d4c?w=400" alt="Sweet Caramel">
+                <img src="https://images.unsplash.com/photo-1619895092538-128341789043?w=400&auto=format&fit=crop" alt="Salted Caramel">
                 <div class="flavor-label">Salted Caramel</div>
             </div>
             <div class="flavor-card">
-                <img src="https://images.unsplash.com/photo-1599490659223-915220ae0248?w=400" alt="Smoky BBQ">
+                <img src="https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?w=400&auto=format&fit=crop" alt="Smoky BBQ">
                 <div class="flavor-label">Smoky BBQ</div>
             </div>
             <div class="flavor-card">
-                <img src="https://images.unsplash.com/photo-1630136452811-09493139886a?w=400" alt="White Cheddar">
+                <img src="https://images.unsplash.com/photo-1618164435735-413d3b066c9a?w=400&auto=format&fit=crop" alt="White Cheddar">
                 <div class="flavor-label">White Cheddar</div>
             </div>
         </div>
     </div>
 
+    <!-- Fix 2 & 3: Wrapped iframe in a responsive container with solid white background -->
     <div id="vote" class="vote-section">
         <h2 style="margin-bottom: 30px;">Choose Your Champion</h2>
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSda4n0_BxkUcd9U9Whuj1yK4uMx8scFvm76KtUP3kSR4AIGdw/viewform?embedded=true" width="640" height="624" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+        <div class="form-container">
+            <div class="iframe-wrapper">
+                <iframe 
+                    src="https://docs.google.com/forms/d/e/1FAIpQLSda4n0_BxkUcd9U9Whuj1yK4uMx8scFvm76KtUP3kSR4AIGdw/viewform?embedded=true&usp=sf_link"
+                    frameborder="0" 
+                    marginheight="0" 
+                    marginwidth="0"
+                    scrolling="yes"
+                    title="Vote for your favorite flavor">
+                    Loading…
+                </iframe>
+            </div>
+        </div>
     </div>
 
     <footer>
