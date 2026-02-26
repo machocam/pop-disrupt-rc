@@ -182,6 +182,8 @@
             text-align: center;
         }
     </style>
+    #This is for Tally pop up
+	<script async src="https://tally.so/widgets/embed.js"></script>
 </head>
 <body>
 
@@ -200,36 +202,46 @@
         <div class="flavor-grid">
             <!-- Fix 1: Replaced broken image links with working Unsplash URLs -->
             <div class="flavor-card">
-                <img src="https://images.unsplash.com/photo-1608039829572-78524f79c4c7?w=400&auto=format&fit=crop" alt="Spicy Buffalo">
+                <img src="./photos/cat1.webp" alt="Spicy Buffalo">
                 <div class="flavor-label">Spicy Buffalo</div>
             </div>
             <div class="flavor-card">
-                <img src="https://images.unsplash.com/photo-1551183053-bf91798d9f4f?w=400&auto=format&fit=crop" alt="Truffle Parm">
+                <img src="./photos/cat2.jpg" alt="Truffle Parm">
                 <div class="flavor-label">Truffle Parm</div>
             </div>
             <div class="flavor-card">
-                <img src="https://images.unsplash.com/photo-1619895092538-128341789043?w=400&auto=format&fit=crop" alt="Salted Caramel">
+                <img src="./photos/cat2.jpg" alt="Salted Caramel">
                 <div class="flavor-label">Salted Caramel</div>
             </div>
             <div class="flavor-card">
-                <img src="https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?w=400&auto=format&fit=crop" alt="Smoky BBQ">
+                <img src="./photos/cat2.jpg" alt="Smoky BBQ">
                 <div class="flavor-label">Smoky BBQ</div>
             </div>
             <div class="flavor-card">
-                <img src="https://images.unsplash.com/photo-1618164435735-413d3b066c9a?w=400&auto=format&fit=crop" alt="White Cheddar">
+                <img src="./photos/cat2.jpg" alt="White Cheddar">
                 <div class="flavor-label">White Cheddar</div>
             </div>
         </div>
     </div>
 
-    <!-- Fix 2 & 3: Wrapped iframe in a responsive container with solid white background -->
-    <div id="vote" class="vote-section">
-        <h2 style="margin-bottom: 30px;">Choose Your Champion</h2>
-        <iframe data-tally-src="https://tally.so/embed/jaBlKJ?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="569" frameborder="0" marginheight="0" marginwidth="0" title="Choose Your Champion"></iframe>
-        <script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
-        </div>
-    </div>
 
+    <div id="vote" class="vote-section">
+        <h2>Which Flavor Reigns Supreme?</h2>
+        <p class="subtext">Takes 30 seconds. Your vote shapes Season 2.</p>
+
+        <button
+            class="btn-tally-popup"
+            data-tally-open="jaBlKJ"
+            data-tally-emoji-text="🏆"
+            data-tally-emoji-animation="wave"
+            data-tally-width="500"
+        >
+            <span class="btn-icon">🏆</span>
+            Vote for Your Flavor
+        </button>
+
+        <p class="vote-nudge">Join <span>2,400+</span> snack lovers already voting</p>
+    </div>
     <footer>
         <p>&copy; 2026 PopDisrupt Seasoning Co. Questions? Call 1-800-POP-CORN</p>
     </footer>
